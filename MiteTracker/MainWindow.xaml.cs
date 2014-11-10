@@ -23,8 +23,7 @@ using System.Windows.Media.Animation;
 namespace Custom
 {    
     /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
-	/// ADOS TEST IST HIER
+    /// Interaktionslogik für MainWindow.xaml	
     /// </summary>
     public partial class MainWindow : Window
     {
