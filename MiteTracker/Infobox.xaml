@@ -1,0 +1,85 @@
+﻿<Window x:Class="Custom.Infobox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Infobox" Height="115" Width="200" WindowStyle="None" Topmost="True" AllowsTransparency="True" Loaded="Window_Loaded">
+    <Window.Background>
+        <SolidColorBrush />
+    </Window.Background>
+    <Window.Resources>
+        <!--Button Style-->
+        <Style x:Key="rectButton" TargetType="Rectangle">
+            <Setter Property="Height" Value="16" />
+            <Setter Property="Width" Value="16" />
+            <Setter Property="RadiusX" Value="1"/>
+            <Setter Property="RadiusY" Value="1"/>
+            <Setter Property="VerticalAlignment" Value="Top"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+            <!--MouseOver Effekt für Buttons-->
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Stroke" Value="#111"/>
+                    <Setter Property="StrokeThickness" Value="0.5"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <!--Schriftart für Digitale Uhr-->
+        <Style x:Key="DigitalFont">
+            <Setter Property="TextElement.FontFamily" Value="/Fonts/#DS-DIGITAL"/>
+        </Style>
+    </Window.Resources>
+    <Grid Height="75">
+        <Grid.Background>
+            <SolidColorBrush />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="28"></ColumnDefinition>
+            <ColumnDefinition Width="28"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Rectangle Name="GUI" Grid.ColumnSpan="4" Grid.RowSpan="3" Fill="#f6f6f6" RadiusX="3" RadiusY="3" Stroke="#FF969696" Width="Auto" Height="Auto" Opacity="1" />
+        <Label Name="infoSubject" Grid.Row="0" Content="Subject" Grid.ColumnSpan="3" Foreground="#f6f6f6" Width="Auto" MouseDown="infoSubject_MouseDown" MouseDoubleClick="infoSubject_MouseDoubleClick">
+            <Label.Style>
+                <Style TargetType="Label">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Label">
+                                <Border x:Name="_brdMain" 
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        BorderBrush="{TemplateBinding BorderBrush}" 
+                                        Background="{TemplateBinding Background}"
+                                        CornerRadius="3,3,0,0"
+                                        >
+                                    <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,0" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Label.Style>
+            <Label.Background>
+                <SolidColorBrush>#2385d2</SolidColorBrush>
+            </Label.Background>
+        </Label>
+        <!--Trennlinie-->
+        <!--<Rectangle Height="2" VerticalAlignment="Top" Fill="#da4242" Grid.Row="1" Grid.ColumnSpan="3" />-->
+        <Label Name="infoTask" Grid.Row="1" Grid.ColumnSpan="3" Content="-/-" Margin="5,0,0,0" Height="20" FontSize="12" Padding="2" Foreground="#ff8215"></Label>
+        <Label Name="infoElapsed" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Content="00:00" FontSize="30" HorizontalContentAlignment="Right" Margin="6,0" FontFamily="/Fonts/DS-DIGI.TTF#DS-DIGITAL" VerticalContentAlignment="Bottom" Padding="2" Visibility="Visible"></Label>
+        <Rectangle Name="play" Grid.Row="2" Grid.Column="0" Style="{StaticResource rectButton}" Margin="6,4" MouseDown="play_MouseDown">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="{DynamicResource imgPause}"></ImageBrush>
+                <!--<ImageBrush ImageSource="/RedmineTracker;component/Images/playback_pause.png" />-->
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Name="stop" Grid.Row="2" Grid.Column="1" Style="{StaticResource rectButton}" MouseDown="stop_MouseDown" VerticalAlignment="Top" Margin="6,4">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/MiteTracker;component/Pictures/playback_stop.png" />
+            </Rectangle.Fill>
+        </Rectangle>
+    </Grid>
+</Window>

@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Achtung: Die Datei muss noch in der App.xaml unter <Application.Resources> eingefügt werden! Anbei der Code:-->
+    <!--<ResourceDictionary>
+        <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="images.xaml" />
+        </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>-->
+    
+    <!--Visual Studio 2013-->
+    <BitmapImage x:Key="imgPause" UriSource="Pictures/playback_pause.png"></BitmapImage>
+    <BitmapImage x:Key="imgPlay" UriSource="Pictures/playback_play.png"></BitmapImage>
+
+    <BitmapImage x:Key="imgConfirm" UriSource="Pictures/notification_confirm.png"></BitmapImage>
+    <BitmapImage x:Key="imgCritical" UriSource="Pictures/notification_critical.png"></BitmapImage>
+    <BitmapImage x:Key="imgInformation" UriSource="Pictures/notification_information.png"></BitmapImage>
+    <BitmapImage x:Key="imgQuestion" UriSource="Pictures/notification_question.png"></BitmapImage>
+    <BitmapImage x:Key="imgWarning" UriSource="Pictures/notification_warning.png"></BitmapImage>
+</ResourceDictionary>
