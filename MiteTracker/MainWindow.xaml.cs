@@ -24,6 +24,7 @@ namespace Custom
 {    
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
+	/// ADOS TEST IST HIER
     /// </summary>
     public partial class MainWindow : Window
     {
